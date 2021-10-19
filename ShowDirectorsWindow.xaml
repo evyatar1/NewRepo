@@ -1,0 +1,43 @@
+﻿<Window x:Class="DBMoviesManager.ShowDirectorsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DBMoviesManager"
+        mc:Ignorable="d"
+                 Title="Directors Window" Height="350" Width="400" Initialized="Window_Initialized" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+        <Label Grid.ColumnSpan="2">Directors:</Label>
+            
+            <Button Grid.ColumnSpan="2" Name="btnEdit" IsEnabled="False" Grid.Column="3" Margin="4" Click="editButton">Edit</Button>
+            <Button Grid.ColumnSpan="2" Name="btnDelete" IsEnabled="False" Grid.Column="5" Margin="4" Click="deleteButton">Delete</Button>
+
+        </Grid>
+        <Label Grid.Column="1">Oscars:</Label>
+        <Label Grid.Column="0" Grid.Row="2">Movies:</Label>
+
+        <ListBox Name="lbDirectors" Grid.Row="1" Margin="5" SelectionChanged="lbDirectors_SelectionChanged"/>
+        <ListBox Name="lbOscar" Grid.Row="1"  Grid.Column="1" Margin="5"/>
+        <ListBox Name="lbMovies" Grid.Row="3"  Margin="5" Grid.ColumnSpan="2" />
+    </Grid>
+</Window>

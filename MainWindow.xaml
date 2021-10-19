@@ -1,0 +1,66 @@
+﻿<Window x:Class="DBMoviesManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DBMoviesManager"
+        mc:Ignorable="d"
+        Title="Movies DB Manager" Height="304" Width="587" ResizeMode="NoResize" Initialized="Window_Initialized">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Add">
+                <MenuItem Name="miAddActor" Header="_Actor" Click="addActorButton"/>
+                <MenuItem Name="miAddDirector" Header="_Director" Click="MiAddDirector_Click"/>
+                <MenuItem Name="miAddMovie" Header="_Movie" Click="MiAddMovie_Click"/>
+                <MenuItem Name="miAddOscar" Header="Oscar" Click="MiAddOscar_Click"/>
+
+            </MenuItem>
+            <MenuItem Header="_Show">
+                <MenuItem Name="miShowActor" Header="_Actor" Click="miShowActor_Click"/>
+                <MenuItem Name="miShowDirector" Header="_Director" Click="miShowDirector_Click"/>
+                <MenuItem Name="miShowOscar" Header="Oscar" Click="miShowOscar_Click"/>
+            </MenuItem>
+            <MenuItem Header="Connect">
+                <MenuItem Name="miMovieToActor" Header="_Movie to Actor" Click="miMovieToActorClick"/>
+                <MenuItem Name="miMovieToActress" Header="_Movie to Actress" Click="miMovieToActressClick"/>
+                <MenuItem Name="miMovieToDirector" Header="_Movie to Director" Click="miMovieToDirectorClick"/>
+                <MenuItem Name="miActorToMovie" Header="_Actor to Movie" Click="miActorToMovieClick"/>
+                <MenuItem Name="miActressToMovie" Header="_Actress to Movie" Click="miActressToMovieClick"/>
+                <MenuItem Name="miDirectorToMovie" Header="_Director to Movie" Click="miDirectorToMovieClick"/>
+
+            </MenuItem>
+            <MenuItem Header="_Search By">
+                <MenuItem Name="miMovieYearSearch" Header="_Year" Click="miMovieYearSearch_Click"/>
+                <MenuItem Name="miTwoActorsSearch" Header="_Two Actors" Click="miTwoActorsSearch_Click"/>
+                <MenuItem Name="miMovieOscarSearch" Header="_Movie Won Oscar" Click="miMovieOscarSearch_Click"/>
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal" Margin="10,0,0,0">
+
+                <TextBlock Margin="0,10,0,0" Text="Director: "/>
+                <TextBlock Margin="10" Width="80" Name="tbDirector"/>
+                <TextBlock Margin="0,10,0,0" Text="Year: "/>
+                <TextBlock Margin="10" Width="50" Name="tbYear"/>
+                <TextBlock Margin="0,10,0,0" Text="Country: "/>
+                <TextBlock Margin="10" Width="65" Name="tbCountry"/>
+                <TextBlock Margin="0,10,0,0" Text="Imdb: "/>
+                <TextBlock Margin="10" Width="53" Name="tbScore"/>
+                <TextBlock Margin="0,10,0,0" Text="Oscar: "/>
+                <TextBlock Margin="10" Width="42" Name="tbOscar"/>
+            </StackPanel>
+            <ListBox  Name="lbMovies" Margin="10" Grid.Row="1" SelectionChanged="lbMovies_SelectionChanged"/>
+            <ListBox  Name="lbActors" Margin="10" Grid.Row="1" Grid.Column="1" IsEnabled="False"/>
+        </Grid>
+    </DockPanel>
+</Window>
+

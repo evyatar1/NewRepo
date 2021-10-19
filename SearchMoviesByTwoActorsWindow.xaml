@@ -1,0 +1,52 @@
+﻿<Window x:Class="DBMoviesManager.SearchMoviesByTwoActorsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DBMoviesManager"
+        mc:Ignorable="d"
+        Title="Search Movies By Two Actors" Height="450" Width="800" Initialized="Window_Initialized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="First Actor:" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <ComboBox Grid.Column="1" Margin="8" Name="cbFirstActor"/>
+        <TextBlock Grid.Row="1" Text="Second Actor:" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <ComboBox Grid.Row="1" Grid.Column="1" Margin="8" Name="cbSecondActor"/>
+        <Button Margin="10" Content="Search" Grid.Column="1" Grid.Row="2" Name="btnSearch" Click="btnSearch_Click"/>
+        <Grid Grid.Row="3" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal" Margin="10,0,0,0">
+
+                <TextBlock Margin="0,10,0,0" Text="Director: "/>
+                <TextBlock Margin="10" Width="65" Name="tbDirector"/>
+                <TextBlock Margin="0,10,0,0" Text="Year: "/>
+                <TextBlock Margin="10" Width="65" Name="tbYear"/>
+                <TextBlock Margin="0,10,0,0" Text="Country: "/>
+                <TextBlock Margin="10" Width="65" Name="tbCountry"/>
+                <TextBlock Margin="0,10,0,0" Text="Imdb: "/>
+                <TextBlock Margin="10" Width="65" Name="tbScore"/>
+            </StackPanel>
+            <ListBox  Name="lbMovies" Margin="10" Grid.Row="1" SelectionChanged="lbMovies_SelectionChanged"/>
+            <ListBox  Name="lbActors" Margin="10" Grid.Row="1" Grid.Column="1" IsEnabled="False"/>
+        </Grid>
+
+    </Grid>
+</Window>
